@@ -1,12 +1,17 @@
-from django.urls import path, include
-from rest_framework import routers
+from django.urls import path
+from django.views.generic import TemplateView
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from amicci_briefing.api import views
 
-router = routers.DefaultRouter()
-# router.register(r"briefing", views.BriefingViewSet)
-# router.register(r"retailer", views.RetailerViewSet)
-# router.register(r"vendor", views.VendorViewSet)
 
 urlpatterns = [
-    path("", include(router.urls)),
+    path(
+        "swagger-ui/",
+        TemplateView.as_view(
+            template_name="swagger-ui.html",
+        ),
+        name="swagger-ui",
+    ),
 ]
+
+urlpatterns += staticfiles_urlpatterns()
