@@ -15,7 +15,7 @@ class Briefing(models.Model):
 class Retailer(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=200)
-    retailer = ArrayField(models.IntegerField())
+    vendors = ArrayField(models.IntegerField())
 
 
 class Vendor(models.Model):
