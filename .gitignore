@@ -1,6 +1,5 @@
 # PostgreSQL
-.pg_service.conf
-.pgpass
+postgres-data
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
