@@ -9,6 +9,7 @@ No contexto da Amicci, um Briefing é o documento que descreve um projeto a ser 
 ## Configuração
 
 Toda a configuração da aplicação é feita através do arquivo de variáveis de ambiente, `.env`. As propriedades utilizadas podem ser encontradas no arquivo `.env.example`.
+Um Django superuser tentará ser criado com `DJANGO_SUPERUSER_USERNAME`, `DJANGO_SUPERUSER_EMAIL` e `DJANGO_SUPERUSER_PASSWORD`, porém as variáveis podem ser omitidas caso não deseje superuser.
 
 ## Executando com Docker
 
@@ -39,7 +40,7 @@ docker compose up -d
 Por fim, verifique o deployment acessando o servidor em um navegador de sua preferência:
 
 ```sh
-127.0.0.1:8000
+127.0.0.1:8000/api/
 ```
 
 ## Endpoints
