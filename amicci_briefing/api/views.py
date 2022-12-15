@@ -8,21 +8,31 @@ from .serializers import (
 )
 
 
-class ListBriefings(generics.ListAPIView):
+class BriefingListView(generics.ListAPIView):
     queryset = Briefing.objects.all()
     serializer_class = BriefingSerializer
 
 
-class ListRetailers(generics.ListAPIView):
+class RetailerListView(generics.ListAPIView):
     queryset = Retailer.objects.all()
     serializer_class = RetailerSerializer
 
 
-class ListVendors(generics.ListAPIView):
+class VendorListView(generics.ListAPIView):
     queryset = Vendor.objects.all()
     serializer_class = VendorSerializer
 
 
-class ListCategories(generics.ListAPIView):
+class CategoryListView(generics.ListAPIView):
+    queryset = Category.objects.all()
+    serializer_class = CategorySerializer
+
+
+class CategoryCreateView(generics.CreateAPIView):
+    queryset = Category.objects.all()
+    serializer_class = CategorySerializer
+
+
+class CategoryDetailUpdateView(generics.RetrieveUpdateAPIView):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer

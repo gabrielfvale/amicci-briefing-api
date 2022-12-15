@@ -28,5 +28,5 @@ class Briefing(models.Model):
         Category, on_delete=models.DO_NOTHING, serialize=False
     )
     responsible = models.CharField(max_length=200)
-    release_date = models.DateField()
+    release_date = models.DateField(auto_now_add=True)
     available = models.PositiveSmallIntegerField()
