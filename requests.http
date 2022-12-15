@@ -3,6 +3,19 @@ GET http://localhost:8000/api/briefings/ HTTP/1.1
 
 ###
 
+POST http://localhost:8000/api/briefing/ HTTP/1.1
+content-type: application/json
+
+{
+  "name": "New Briefing",
+  "responsible": "Gabriel",
+  "retailer": 1,
+  "category": 1,
+  "available": 1
+}
+
+###
+
 # Retailer
 GET http://localhost:8000/api/retailers HTTP/1.1
 

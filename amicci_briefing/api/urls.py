@@ -7,6 +7,7 @@ from amicci_briefing.api import views
 urlpatterns = [
     # Briefing
     path("briefings/", views.BriefingListView.as_view()),
+    path("briefing/", views.BriefingCreateView.as_view()),
     # Retailer
     path("retailers/", views.RetailerListView.as_view()),
     # Vendor

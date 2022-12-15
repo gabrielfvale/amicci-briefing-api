@@ -2,6 +2,7 @@ from rest_framework import generics, mixins
 from .models import Briefing, Retailer, Vendor, Category
 from .serializers import (
     BriefingSerializer,
+    BriefingCreateSerializer,
     CategorySerializer,
     RetailerSerializer,
     VendorSerializer,
@@ -11,6 +12,11 @@ from .serializers import (
 class BriefingListView(generics.ListAPIView):
     queryset = Briefing.objects.all().order_by("id")
     serializer_class = BriefingSerializer
+
+
+class BriefingCreateView(generics.CreateAPIView):
+    queryset = Briefing.objects.all()
+    serializer_class = BriefingCreateSerializer
 
 
 # Retailer
