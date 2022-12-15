@@ -31,7 +31,13 @@ class RetailerSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Retailer
-        fields = ("name", "vendors")
+        fields = ("id", "name", "vendors")
+
+
+class RetailerCreateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Retailer
+        fields = "__all__"
 
 
 class CategorySerializer(serializers.ModelSerializer):

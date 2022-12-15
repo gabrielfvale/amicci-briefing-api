@@ -28,13 +28,34 @@ content-type: application/json
 }
 
 ###
+
 # Retailer
-GET http://localhost:8000/api/retailers HTTP/1.1
+GET http://localhost:8000/api/retailers/ HTTP/1.1
+
+###
+
+POST http://localhost:8000/api/retailer/ HTTP/1.1
+content-type: application/json
+
+{
+  "name": "New Retailer",
+  "vendors": [1]
+}
+
+###
+
+PUT http://localhost:8000/api/retailer/1 HTTP/1.1
+content-type: application/json
+
+{
+  "name": "New Retailer Updated",
+  "vendors": [1, 2]
+}
 
 ###
 
 # Vendor
-GET http://localhost:8000/api/vendors HTTP/1.1
+GET http://localhost:8000/api/vendors/ HTTP/1.1
 
 ###
 
@@ -61,7 +82,7 @@ content-type: application/json
 ###
 
 # Category
-GET http://localhost:8000/api/categories HTTP/1.1
+GET http://localhost:8000/api/categories/ HTTP/1.1
 
 ###
 
@@ -83,6 +104,6 @@ POST http://localhost:8000/api/category/ HTTP/1.1
 content-type: application/json
 
 {
-  "name": "Sample Category",
+  "name": "New Category",
   "description": "Descrição"
 }

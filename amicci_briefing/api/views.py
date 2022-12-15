@@ -5,6 +5,7 @@ from .serializers import (
     BriefingCreateSerializer,
     CategorySerializer,
     RetailerSerializer,
+    RetailerCreateSerializer,
     VendorSerializer,
 )
 
@@ -32,6 +33,20 @@ class BriefingRetrieveUpdateView(generics.RetrieveUpdateAPIView):
 class RetailerListView(generics.ListAPIView):
     queryset = Retailer.objects.all().order_by("id")
     serializer_class = RetailerSerializer
+
+
+class RetailerCreateView(generics.CreateAPIView):
+    queryset = Retailer.objects.all()
+    serializer_class = RetailerCreateSerializer
+
+
+class RetailerRetrieveUpdateView(generics.RetrieveUpdateAPIView):
+    queryset = Retailer.objects.all()
+
+    def get_serializer_class(self):
+        if self.request.method == "PUT":
+            return RetailerCreateSerializer
+        return RetailerSerializer
 
 
 # Vendor

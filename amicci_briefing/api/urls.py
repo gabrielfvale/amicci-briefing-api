@@ -11,6 +11,8 @@ urlpatterns = [
     path("briefing/", views.BriefingCreateView.as_view()),
     # Retailer
     path("retailers/", views.RetailerListView.as_view()),
+    path("retailer/<int:pk>", views.RetailerRetrieveUpdateView.as_view()),
+    path("retailer/", views.RetailerCreateView.as_view()),
     # Vendor
     path("vendors/", views.VendorListView.as_view()),
     path("vendor/<int:pk>", views.VendorRetrieveUpdateView.as_view()),
