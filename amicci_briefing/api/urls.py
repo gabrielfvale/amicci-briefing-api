@@ -11,6 +11,8 @@ urlpatterns = [
     path("retailers/", views.RetailerListView.as_view()),
     # Vendor
     path("vendors/", views.VendorListView.as_view()),
+    path("vendor/<int:pk>", views.VendorDetailUpdateView.as_view()),
+    path("vendor/", views.VendorCreateView.as_view()),
     # Category
     path("categories/", views.CategoryListView.as_view()),
     path("category/<int:pk>", views.CategoryDetailUpdateView.as_view()),

@@ -1,16 +1,41 @@
-# GET briefings/
+# Briefing
 GET http://localhost:8000/api/briefings/ HTTP/1.1
 
 ###
 
+# Retailer
 GET http://localhost:8000/api/retailers HTTP/1.1
 
 ###
 
+# Vendor
 GET http://localhost:8000/api/vendors HTTP/1.1
 
 ###
 
+GET http://localhost:8000/api/vendor/1 HTTP/1.1
+
+###
+
+PUT http://localhost:8000/api/vendor/1 HTTP/1.1
+content-type: application/json
+
+{
+  "name": "Vendor 1 Updated"
+}
+
+###
+
+POST http://localhost:8000/api/vendor/ HTTP/1.1
+content-type: application/json
+
+{
+  "name": "New Vendor"
+}
+
+###
+
+# Category
 GET http://localhost:8000/api/categories HTTP/1.1
 
 ###
@@ -26,7 +51,6 @@ content-type: application/json
   "name": "Novo Produto",
   "description": "Descrição atualizada"
 }
-
 
 ###
 
