@@ -9,19 +9,19 @@ from .serializers import (
 
 # Briefing
 class BriefingListView(generics.ListAPIView):
-    queryset = Briefing.objects.all()
+    queryset = Briefing.objects.all().order_by("id")
     serializer_class = BriefingSerializer
 
 
 # Retailer
 class RetailerListView(generics.ListAPIView):
-    queryset = Retailer.objects.all()
+    queryset = Retailer.objects.all().order_by("id")
     serializer_class = RetailerSerializer
 
 
 # Vendor
 class VendorListView(generics.ListAPIView):
-    queryset = Vendor.objects.all()
+    queryset = Vendor.objects.all().order_by("id")
     serializer_class = VendorSerializer
 
 
@@ -37,7 +37,7 @@ class VendorDetailUpdateView(generics.RetrieveUpdateAPIView):
 
 # Category
 class CategoryListView(generics.ListAPIView):
-    queryset = Category.objects.all()
+    queryset = Category.objects.all().order_by("id")
     serializer_class = CategorySerializer
 
 
