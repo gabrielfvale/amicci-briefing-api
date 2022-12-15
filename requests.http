@@ -16,6 +16,18 @@ content-type: application/json
 
 ###
 
+PUT http://localhost:8000/api/briefing/1 HTTP/1.1
+content-type: application/json
+
+{
+  "name": "Updated Briefing!",
+  "responsible": "Gabriel",
+  "retailer": 1,
+  "category": 2,
+  "available": 0
+}
+
+###
 # Retailer
 GET http://localhost:8000/api/retailers HTTP/1.1
 

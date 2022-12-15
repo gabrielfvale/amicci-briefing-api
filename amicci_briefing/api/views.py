@@ -1,4 +1,4 @@
-from rest_framework import generics, mixins
+from rest_framework import generics
 from .models import Briefing, Retailer, Vendor, Category
 from .serializers import (
     BriefingSerializer,
@@ -19,6 +19,15 @@ class BriefingCreateView(generics.CreateAPIView):
     serializer_class = BriefingCreateSerializer
 
 
+class BriefingRetrieveUpdateView(generics.RetrieveUpdateAPIView):
+    queryset = Briefing.objects.all()
+
+    def get_serializer_class(self):
+        if self.request.method == "PUT":
+            return BriefingCreateSerializer
+        return BriefingSerializer
+
+
 # Retailer
 class RetailerListView(generics.ListAPIView):
     queryset = Retailer.objects.all().order_by("id")
@@ -36,7 +45,7 @@ class VendorCreateView(generics.CreateAPIView):
     serializer_class = VendorSerializer
 
 
-class VendorDetailUpdateView(generics.RetrieveUpdateAPIView):
+class VendorRetrieveUpdateView(generics.RetrieveUpdateAPIView):
     queryset = Vendor.objects.all()
     serializer_class = VendorSerializer
 
@@ -52,6 +61,6 @@ class CategoryCreateView(generics.CreateAPIView):
     serializer_class = CategorySerializer
 
 
-class CategoryDetailUpdateView(generics.RetrieveUpdateAPIView):
+class CategoryRetrieveUpdateView(generics.RetrieveUpdateAPIView):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
