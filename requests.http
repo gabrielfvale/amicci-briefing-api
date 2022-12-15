@@ -1,0 +1,109 @@
+# Briefing
+GET http://localhost:8000/api/briefings/ HTTP/1.1
+
+###
+
+POST http://localhost:8000/api/briefing/ HTTP/1.1
+content-type: application/json
+
+{
+  "name": "New Briefing",
+  "responsible": "Gabriel",
+  "retailer": 1,
+  "category": 1,
+  "available": 1
+}
+
+###
+
+PUT http://localhost:8000/api/briefing/1 HTTP/1.1
+content-type: application/json
+
+{
+  "name": "Updated Briefing!",
+  "responsible": "Gabriel",
+  "retailer": 1,
+  "category": 2,
+  "available": 0
+}
+
+###
+
+# Retailer
+GET http://localhost:8000/api/retailers/ HTTP/1.1
+
+###
+
+POST http://localhost:8000/api/retailer/ HTTP/1.1
+content-type: application/json
+
+{
+  "name": "New Retailer",
+  "vendors": [1]
+}
+
+###
+
+PUT http://localhost:8000/api/retailer/1 HTTP/1.1
+content-type: application/json
+
+{
+  "name": "New Retailer Updated",
+  "vendors": [1, 2]
+}
+
+###
+
+# Vendor
+GET http://localhost:8000/api/vendors/ HTTP/1.1
+
+###
+
+GET http://localhost:8000/api/vendor/1 HTTP/1.1
+
+###
+
+PUT http://localhost:8000/api/vendor/1 HTTP/1.1
+content-type: application/json
+
+{
+  "name": "Vendor 1 Updated"
+}
+
+###
+
+POST http://localhost:8000/api/vendor/ HTTP/1.1
+content-type: application/json
+
+{
+  "name": "New Vendor"
+}
+
+###
+
+# Category
+GET http://localhost:8000/api/categories/ HTTP/1.1
+
+###
+
+GET http://localhost:8000/api/category/1 HTTP/1.1
+
+###
+
+PUT http://localhost:8000/api/category/1 HTTP/1.1
+content-type: application/json
+
+{
+  "name": "Novo Produto",
+  "description": "Descrição atualizada"
+}
+
+###
+
+POST http://localhost:8000/api/category/ HTTP/1.1
+content-type: application/json
+
+{
+  "name": "New Category",
+  "description": "Descrição"
+}
