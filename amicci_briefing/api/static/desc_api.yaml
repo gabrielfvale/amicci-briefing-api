@@ -7,7 +7,7 @@ info:
     email: demo@amicci-digital.com.br
   version: 1.0.0
 servers:
-  - url: localhost/api/demo/
+  - url: http://localhost:8000/api/
 components:
   schemas:
     Briefing:
@@ -54,7 +54,7 @@ components:
         description:
           type: string
 paths:
-  /briefings:
+  /briefings/:
     get:
       tags:
         - briefings
@@ -87,20 +87,16 @@ paths:
           name: id
           description: ID do Briefing existente
           required: true
-          schema:
-            $ref: '#/components/schemas/Briefing'
     put:
       tags:
         - briefing
-      summary: Busca um briefing
+      summary: Atualiza um briefing
       operationId: putBriefing
       parameters:
         - in: path
           name: id
           description: ID do Briefing existente
           required: true
-          schema:
-            $ref: '#/components/schemas/Briefing'
       requestBody:
         description: Atualiza Briefing
         content:
@@ -120,7 +116,7 @@ paths:
     post:
       tags:
         - briefing
-      summary: Busca um briefing
+      summary: Cria um briefing
       operationId: postBriefing
       requestBody:
         description: Briefing criado
